@@ -95,6 +95,10 @@ const auth = async () => {
       }
     );
 
+    printLog(LogType.INFO, "STRACKTRACE MATHTMZ:")
+    printLog(LogType.INFO, data)
+    printLog(LogType.INFO, e)
+
     if (data.description === "SUCCESS") {
       Object.keys(data.data).forEach((key) => {
         storage.setItem(key, data.data[key]);
