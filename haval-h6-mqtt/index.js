@@ -108,7 +108,8 @@ const auth = async () => {
     console.log(params)
     printLog(LogType.INFO, "HEADERS")
     printLog(LogType.INFO, userHeadersStr)
-    printLog(LogType.INFO, data)
+    dataStr = JSON.stringify(data);
+    printLog(LogType.INFO, dataStr)
     
 
     if (data.description === "SUCCESS") {
@@ -121,7 +122,9 @@ const auth = async () => {
 
     throw data;
   } catch (e) {
-    printLog(LogType.INFO, e)
+    eStr = JSON.stringify(e);
+    printLog(LogType.INFO, "ERRO")
+    printLog(LogType.INFO, eStr)
     printLog(LogType.ERROR, "Error on authentication: " + e.message);
     process.exit(0);
   }
