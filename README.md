@@ -1,1 +1,1 @@
-# haval-home-assistant
+Clique [aqui](haval-h6-mqtt/) para instruções.
