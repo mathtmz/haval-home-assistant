@@ -95,7 +95,7 @@ const auth = async () => {
       }
     );
 
-    printLog(LogType.INFO, "STRACKTRACE MATHTMZ:")
+    printLog(LogType.INFO, "STRACKTRACE MATHTMZ - TESTE:")
     printLog(LogType.INFO, data)
     
 
