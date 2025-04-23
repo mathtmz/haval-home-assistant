@@ -99,11 +99,15 @@ const auth = async () => {
 
     printLog(LogType.INFO, "STRACKTRACE MATHTMZ - TESTE:")
     printLog(LogType.INFO, "PARAMS")
-    params = JSON.stringify(params, null, 4);
-    userHeaders = JSON.stringify(userHeaders, null, 4);
-    printLog(LogType.INFO, params)
+    paramsStr = JSON.stringify(params);
+    userHeadersStr = JSON.stringify(userHeaders);
+    printLog(LogType.INFO, paramsStr)
+    printLog(LogType.INFO, params.deviceid)
+    printLog(LogType.INFO, params.password)
+    printLog(LogType.INFO, params.account)
+    console.log(params)
     printLog(LogType.INFO, "HEADERS")
-    printLog(LogType.INFO, userHeaders)
+    printLog(LogType.INFO, userHeadersStr)
     printLog(LogType.INFO, data)
     
 
