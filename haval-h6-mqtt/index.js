@@ -118,10 +118,6 @@ const getCarList = async () => {
     await auth();
     const { data } = await axios.getCarInfo('globalapp/vehicle/acquireVehicles');
     var carList;
-    dataStr = JSON.stringify(data);
-    printLog(LogType.INFO, "CAR LIST")
-    printLog(LogType.INFO, dataStr)
-    console.log(data.data)
     if(data.data){
       //carData = data.data.find(car => car.vin === vin);
       carList = data.data;
