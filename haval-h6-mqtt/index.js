@@ -173,6 +173,10 @@ const GetCarLastStatus = async (vin) => {
   try {
     await auth();
     const { data } = await axios.getCarInfo("vehicle/getLastStatus", vin.toUpperCase());
+    printLog(LogType.INFO, "ENTITIES INTO INSIDE");
+    dataStr = JSON.stringify(data);
+    printLog(LogType.INFO, dataStr);
+    console.log(data)
     return data.data;
   } catch (e) {
     printLog(LogType.ERROR, "Error retrieving car info: " + e.message);
@@ -232,6 +236,7 @@ validationSchema.validate(process.env)
           color: { entity_type: EntityType.SENSOR, },
           tankCapacity: { entity_type: EntityType.SENSOR, },
         }
+
         Object.keys(staticEntities).forEach((code) => {
           var { entity_type } = staticEntities[code];
 
