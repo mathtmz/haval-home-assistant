@@ -95,23 +95,6 @@ const auth = async () => {
       }
     );
 
-    
-
-    printLog(LogType.INFO, "STRACKTRACE MATHTMZ - TESTE:")
-    printLog(LogType.INFO, "PARAMS")
-    paramsStr = JSON.stringify(params);
-    userHeadersStr = JSON.stringify(userHeaders);
-    printLog(LogType.INFO, paramsStr)
-    printLog(LogType.INFO, params.deviceid)
-    printLog(LogType.INFO, params.password)
-    printLog(LogType.INFO, params.account)
-    console.log(params)
-    printLog(LogType.INFO, "HEADERS")
-    printLog(LogType.INFO, userHeadersStr)
-    dataStr = JSON.stringify(data);
-    printLog(LogType.INFO, dataStr)
-    
-
     if (data.description === "SUCCESS") {
       Object.keys(data.data).forEach((key) => {
         storage.setItem(key, data.data[key]);
@@ -173,10 +156,6 @@ const GetCarLastStatus = async (vin) => {
   try {
     await auth();
     const { data } = await axios.getCarInfo("vehicle/getLastStatus", vin.toUpperCase());
-    printLog(LogType.INFO, "ENTITIES INTO INSIDE");
-    dataStr = JSON.stringify(data);
-    printLog(LogType.INFO, dataStr);
-    console.log(data)
     return data.data;
   } catch (e) {
     printLog(LogType.ERROR, "Error retrieving car info: " + e.message);
