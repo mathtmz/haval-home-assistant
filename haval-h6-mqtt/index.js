@@ -202,6 +202,10 @@ validationSchema.validate(process.env)
     var carList = data;
     if(carList.length > 0){
       printLog(LogType.INFO, "  Retrieving car data");
+      printLog(LogType.INFO, "ENTITIES")
+      carListStr = JSON.stringify(carList);
+      printLog(LogType.INFO, carListStr)
+      console.log(carList)
       for (const key of Object.keys(carList)) {
         printLog(LogType.INFO, `  Registering car: ${carList[key].vin}`);      
 
